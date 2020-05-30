@@ -1,4 +1,5 @@
 using CUDAdrv, CUDAnative,CuArrays
+# kernel
 function kernel_vadd(a, b, c)
     i = threadIdx().x
     c[i] = a[i] + b[i]
