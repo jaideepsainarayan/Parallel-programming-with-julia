@@ -10,9 +10,9 @@ function mat_add(a, b, c,l)
 end
 
 # generate some data
-len=2^24
+len=2^24 # no.of elements in matrix
 a = Vector(1:len)
-p= Int(len^0.5)
+p= Int(len^0.5) # order of matrix(n*n)
 a=reshape(a , (p,p))
 
 b=Vector(2:2:2*len)
