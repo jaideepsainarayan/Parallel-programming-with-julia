@@ -1,2 +1,2 @@
 # Parallel-programming-with-julia
-Basic parallel program kernel's using julia
+Implementing basic parallel program kernel's using julia
