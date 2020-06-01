@@ -2,7 +2,7 @@ using CUDAdrv, CUDAnative,CuArrays
 
 # kernel
 function kernel_vadd(a, b, c,l)
-    i = threadIdx().x + (blockIdx().x-1)*(1024)
+    i = threadIdx().x + (blockIdx().x-1)*(blockDim().x)
     if(i<=l)
     c[i] = a[i] + b[i]
     end
