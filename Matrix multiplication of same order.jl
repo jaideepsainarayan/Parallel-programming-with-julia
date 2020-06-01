@@ -15,11 +15,11 @@ end
 # generate some data
 len=9 # number of elements in a square matrix(should be perfect square)
 p= Int(len^0.5) # order of the matrix(p*p)
-a = Vector(1:len)
+a = Vector(1:len) # append elements inside matrix
 a=reshape(a , (p,p))
 a=transpose(a)
 
-b=Vector(2:2:2*len)
+b=Vector(2:2:2*len) # append elements inside matrix
 b=reshape(b, (p,p))
 b=transpose(b)
 
