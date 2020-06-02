@@ -1,5 +1,5 @@
 using CUDAdrv, CUDAnative,CuArrays
-function mat_add(a, b, c,l)
+function mat_mul(a, b, c,l)
     i = (threadIdx().x) + (blockIdx().x-1)*(blockDim().x)
     j=  (threadIdx().y) + (blockIdx().y-1)*(blockDim().y)
     sum=0
@@ -30,5 +30,5 @@ d_b = CuArray(b)
 d_c = similar(d_a)
 
 # execute and fetch results
-@cuda blocks=(ceil(Int,len/1024),ceil(Int,len/1024)) threads=(32,32,1) mat_add(d_a, d_b, d_c,p)
+@cuda blocks=(ceil(Int,len/1024),ceil(Int,len/1024)) threads=(32,32,1) mat_mul(d_a, d_b, d_c,p)
 Array(d_c)
